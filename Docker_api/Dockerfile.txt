@@ -1,0 +1,13 @@
+# start by pulling the python image
+FROM python:3.11.5
+
+# switch working directory
+WORKDIR /app
+ADD . /app
+
+RUN apt-get update && apt-get install -y libgomp1
+RUN pip install -r requirements.txt
+
+EXPOSE 8080
+
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8080", "--access-logfile", "-", "--error-logfile", "-", "Moreno_Bastien_5_code_API_022024:app"]
