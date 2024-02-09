@@ -21,7 +21,7 @@ if st.button("Prédiction"):
         st.warning("Veuillez saisir le titre et le corps de la question avant de cliquer sur le bouton de prédiction.")
     else:
         # api_url = "http://127.0.0.1:8080/predict"
-        api_url = "http://51.44.5.247:8080/predict"
+        api_url = "http://35.181.44.151:8080/predict"
         data = {"text": user_input}
         try : 
             response = requests.post(api_url, json=data)

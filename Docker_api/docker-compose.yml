@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   flask:
-    build: /home/ubuntu/P5_Categorisez_automatiquement_des_questions/Docker_api
+    build: /home/ubuntu/P5_OpenClassroomsProject/Docker_api
     container_name: flask
     restart: always
     mem_limit: 2g
