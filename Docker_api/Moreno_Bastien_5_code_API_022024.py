@@ -13,8 +13,6 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('punkt')
 
-app = Flask(__name__)
-
 def clean_text(html_text):
     """Fonction pour supprimer les balises HTML de chaque document
     et supprimer le code copié par les utilisateurs"""
@@ -137,28 +135,35 @@ def encode_text_with_embedding(text):
     
     return embedded_text
 
-@app.route("/", methods=["GET"])
-def msg():
-    return "API Flask pour utilisation dans Streamlit, voici l'URL : https://categoriser-automatiquement-des-questions.streamlit.app/"
+def create_app(config):
+    app = Flask(__name__)
 
-@app.route("/predict", methods=['POST'])
-def predict():
-    try:
-        # Obtenir les données de la requête POST
-        data = request.get_json()
+    @app.route("/", methods=["GET"])
+    def msg():
+        return "API Flask pour utilisation dans Streamlit, voici l'URL : https://categoriser-automatiquement-des-questions.streamlit.app/"
 
-        # Utiliser la matrice d'embedding pour encoder le texte
-        encoded_text = encode_text_with_embedding(data['text'])
+    @app.route("/predict", methods=['POST'])
+    def predict():
+        try:
+            # Obtenir les données de la requête POST
+            data = request.get_json()
 
-        # Prédiction du modèle
-        predicted_tags = loaded_model.predict(encoded_text)
-        predicted_tags = multilabel_binarizer.inverse_transform(predicted_tags)
+            # Utiliser la matrice d'embedding pour encoder le texte
+            encoded_text = encode_text_with_embedding(data['text'])
 
-        # Retourner les tags prédits au format JSON
-        return jsonify({'predicted_tags': predicted_tags})
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
-        return jsonify({'error': str(e)}), 500
+            # Prédiction du modèle
+            predicted_tags = loaded_model.predict(encoded_text)
+            predicted_tags = multilabel_binarizer.inverse_transform(predicted_tags)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+            # Retourner les tags prédits au format JSON
+            return jsonify({'predicted_tags': predicted_tags})
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
+            return jsonify({'error': str(e)}), 500
+
+    if __name__ == "__main__":
+        app.run(host="0.0.0.0", port=8080)
+    
+    return app
+
+app = create_app(config=None)
