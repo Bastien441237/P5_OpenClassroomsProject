@@ -5,32 +5,59 @@ Ce projet vise à développer un système de catégorisation automatique de ques
 ## Contenu du dossier des livrables
 .
 ├── Docker_api/
+
 │   ├── API_online_model.pkl
+
 │   ├── Dockerfile.txt
+
 │   ├── Moreno_Bastien_5_code_API_022024.py
+
 │   ├── conftest.py
+
 │   ├── docker-compose.yml
+
 │   ├── lists_data.pkl
+
 │   ├── multilabel_binarizer.pkl
+
 │   ├── nginx/
+
 │   │  ├── Dockerfile.txt
+
 │   │  ├── nginx.conf
+
 │   ├── requirements.txt
+
 │   ├── test.py
+
 │   └── tfidf_model.pkl
+
 ├── Requirements_du_projet/
+
 │   ├── requirements.txt
+
 ├── Moreno_Bastien_1_notebook_exploration_022024.ipynb
+
 ├── Moreno_Bastien_2_notebook_requete_API_022024.ipynb
+
 ├── Moreno_Bastien_3_notebook_approche_non_supervisée_022024.ipynb
+
 ├── Moreno_Bastien_4_notebook_approche_supervisée_022024.ipynb
+
 ├── Moreno_Bastien_5_code_API_022024.py
+
 ├── Moreno_Bastien_6_point_entree_API_022024.py
+
 ├── Moreno_Bastien_7_note_technique_MLOps_022024.pdf
+
 ├── Moreno_Bastien_8_presentation_022024.pdf
+
 ├── Stability_model_analysis.ipynb
+
 ├── final_model.pkl
+
 ├── lists_data.pkl
+
 └── multilabel_binarizer.pkl
 
 Docker_api/ : Contient les fichiers pour l'installation de l'environnement de production sur l'instance EC2 d'AWS, l'API avec le modèle de régression logistique avec TF-IDF (modèle plus léger pour garder la gratuité sur AWS), le dossier nginx pour installer nginx sur l'environnement de production et les tests effectués sur l'API.
