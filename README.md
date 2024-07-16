@@ -20,7 +20,7 @@ Stack Overflow est un site célèbre de questions-réponses liées au développe
 2. **Notebook de requête API** : Récupération de données via l'API StackExchange.
 3. **Notebook pour l'approche non supervisée** : Proposer des mots-clés sans utiliser de tags préexistants.
 4. **Notebook pour l'approche supervisée** : Mise en œuvre de modèles de classification avec suivi des expérimentations via MLFlow.
-5. **Code de l'API** : Backend en Flask pour le modèle de suggestion de tags.
+5. **Code de l'API** : Backend - API Flask - pour le modèle de suggestion de tags.
 6. **Point d'entrée de l'API** : Interface Streamlit pour accéder à l'API Flask.
 7. **Note technique MLOps** : Étude sur les approches et outils pour généraliser l'approche MLOps.
 8. **Support de présentation** : Présentation des résultats et de la démarche du projet.
