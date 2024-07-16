@@ -62,7 +62,7 @@ Stack Overflow est un site célèbre de questions-réponses liées au développe
 
 ## 🌐 Lien API
 
-L'API en production est disponible sur : [https://categoriser-automatiquement-des-questions.streamlit.app/](https://categoriser-automatiquement-des-questions.streamlit.app/)
+L'API en production est disponible en ligne ici 👆 : [![Streamlit Logo](https://img.shields.io/badge/Streamlit-%23FF4B4B.svg?logo=streamlit&logoColor=white)](https://categoriser-automatiquement-des-questions.streamlit.app/)
 
 ## 👨‍💻 Auteur
 Bastien Moreno - Data Scientist et passionné par l'analyse de données et le développement de modèles intelligents.\
